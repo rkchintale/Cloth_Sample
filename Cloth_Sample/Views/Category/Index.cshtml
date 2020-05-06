@@ -1,0 +1,11 @@
+﻿@model List<E_Com_Entities.Category>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+@foreach (var Category in Model)
+{
+
+    <h1>@Category.Name</h1>
+    <h4>@Category.Description</h4>
+}

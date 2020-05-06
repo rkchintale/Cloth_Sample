@@ -1,0 +1,28 @@
+﻿@model E_Com_Entities.Category
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>Delete</h2>
+
+<h2>Are you Sure </h2>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                @Html.TextBoxFor(c => c.ID)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="submit">Yes, Sure</button>
+            </td>
+        </tr>
+    </table>
+}
+<a href="~/Views/Category/Index.cshtml">Cancel</a>
