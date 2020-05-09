@@ -9,7 +9,7 @@
     <form method="post" action="/Product/ProductTable">
         <input name="search" id="txtSearch" />
         <button id="Btnsearch" type="button">Search</button>
-        <button>New</button>
+        <button id="btnNew" type="button">New</button>
     </form>
 </div>
 
@@ -18,26 +18,14 @@
 
     @{
         Html.RenderAction("ProductTable");
-        Html.RenderAction("Create");
+      //  Html.RenderAction("Create");
+
     }
 </div>
-    <script>
 
-        $("#Btnsearch").click(function () {
-            //alert("Hiii");
-            var searchValue = $("#txtSearch").val();
-            $.ajax({
-                url: '/Product/ProductTable',
-                data: {
-                    search: searchValue
-                }
-            })
-                .done(function (data) {
-                    $("#TableContainer").html(data);
-                    // alert("Success");
-                }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Fail");
-                });
 
-        });
-    </script>
+<div id="ActionContainer">
+   
+</div>
+
+

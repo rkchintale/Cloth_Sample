@@ -1,10 +1,11 @@
 ﻿@model E_Com_Entities.Product
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Create Product</h2>
-<form id="CreateProduct">
+<h2>Edit</h2>
+
+<form id="EditProduct">
     <table>
         <tr>
             <td>
@@ -32,19 +33,18 @@
         </tr>
         <tr>
             <td>
-                <input id="btnSave" type="button" value="Save" />
+                <input id="btnUpdate" type="button" value="Save" />
             </td>
         </tr>
     </table>
 </form>
 
-
 <script>
-    $("#btnSave").click(function () {
+    $("#btnUpdate").click(function () {
         $.ajax({
             type:'Post',
-            url: '/Product/Create',
-            data: $("#CreateProduct").serialize()
+            url: '/Product/Edit',
+            data: $("#EditProduct").serialize()
         })
             .done(function (data) {
                 $("#TableContainer").html(data);

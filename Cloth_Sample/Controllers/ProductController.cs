@@ -40,5 +40,21 @@ namespace Cloth_Sample.Controllers
             service.SaveProduct(product);
             return RedirectToAction("ProductTable");
         }
+
+
+
+        [HttpGet]
+        public ActionResult Edit(int ID)
+        {
+            var product = service.GetProductById(ID);
+            return PartialView(product);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            service.UpdateProduct(product);
+            return RedirectToAction("ProductTable");
+        }
     }
 }
