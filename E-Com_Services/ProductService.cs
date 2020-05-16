@@ -11,6 +11,7 @@ namespace E_Com_Services
     public class ProductService
     {
         DbContextData db = new DbContextData();
+        Product product;
 
         public Product GetProductById(int Id)
         {
@@ -38,7 +39,7 @@ namespace E_Com_Services
             db.SaveChanges();
         }
 
-        public void DeleteCategory(Product product)
+        public void DeleteProduct(Product product)
         {
             db.products.Remove(product);
             db.SaveChanges();

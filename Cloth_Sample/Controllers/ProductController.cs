@@ -56,5 +56,12 @@ namespace Cloth_Sample.Controllers
             service.UpdateProduct(product);
             return RedirectToAction("ProductTable");
         }
+
+        [HttpPost]
+        public ActionResult Delete(Product product)
+        {
+            service.DeleteProduct(product);
+            return RedirectToAction("ProductTable");
+        }
     }
 }
