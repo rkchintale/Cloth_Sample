@@ -47,8 +47,7 @@
             data: $("#EditProduct").serialize()
         })
             .done(function (data) {
-                $("#TableContainer").html(data);
-                $("#ActionContainer").html("");
+               $("#ActionContainer").html("");
                 // alert("Success");
             }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
                 alert("Fail");
