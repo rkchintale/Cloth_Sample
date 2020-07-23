@@ -17,10 +17,18 @@
         </tr>
         <tr>
             <td>
-                Name
+                Description
             </td>
             <td>
                 @Html.TextBoxFor(c => c.Description)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Image
+            </td>
+            <td>
+                    <input id="imageUpload" name="Image" type="file" accept=".png, .jpg" />
             </td>
         </tr>
         <tr>
@@ -30,3 +38,17 @@
         </tr>
     </table>
 }
+
+
+
+<script>
+    $("imageUpload").change(function () {
+        var element = this;
+        var formData = new FormData();
+        var TotalImage = element.files.length;
+        for (var i = 0; i < TotalImage; i++) {
+            var file = element.files(i);
+            formData.append("Photo", file);
+        }
+    });
+</script>
